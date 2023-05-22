@@ -52,11 +52,11 @@ public class LiteLoaderLogger extends AbstractAppender
 		synchronized (LiteLoaderLogger.logTail)
 		{
 			LiteLoaderLogger.logIndex++;
-			this.append(event.getMillis(), event.getMessage().getFormattedMessage());
+			this.append(event.getTimeMillis(), event.getMessage().getFormattedMessage());
 			Throwable thrown = event.getThrown();
 			if (thrown != null)
 			{
-				this.append(event.getMillis(), String.format("\2474%s: \2476%s", thrown.getClass().getSimpleName(), thrown.getMessage()));
+				this.append(event.getTimeMillis(), String.format("\2474%s: \2476%s", thrown.getClass().getSimpleName(), thrown.getMessage()));
 			}
 		}
 	}

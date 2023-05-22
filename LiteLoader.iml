@@ -6,14 +6,16 @@
     <libelement value="file:///Client/jars/libraries/commons-io/commons-io/2.4/commons-io-2.4.jar" />
     <libelement value="jar://$MODULE_DIR$/lib/launchwrapper-1.11.jar!/" />
     <libelement value="jar://$MODULE_DIR$/lib/asm-debug-all-4.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/log4j-api-2.20.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/log4j-core-2.20.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/log4j-core-2.20.0-helpers-2.0-beta9.jar!/" />
     <libelement value="file:///Client/jars/libraries/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar" />
     <libelement value="file:///Client/jars/libraries/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar" />
     <libelement value="file:///Client/jars/libraries/io/netty/netty-all/4.0.10.Final/netty-all-4.0.10.Final.jar" />
-    <libelement value="file:///Client/jars/libraries/org/apache/logging/log4j/log4j-api/2.0-beta9/log4j-api-2.0-beta9.jar" />
-    <libelement value="file:///Client/jars/libraries/org/apache/logging/log4j/log4j-core/2.0-beta9/log4j-core-2.0-beta9.jar" />
     <libelement value="file:///Client/jars/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar" />
-    <libelement value="file:///Client/jars/libraries/com/mojang/authlib/1.5.16/authlib-1.5.16.jar" />
+    <libelement value="file:///Client/jars/libraries/com/mojang/authlib/1.5.21/authlib-1.5.21.jar" />
     <libelement value="file:///Client/jars/libraries/org/lwjgl/lwjgl/lwjgl/2.9.1/lwjgl-2.9.1.jar" />
+    <libelement value="file:///Client/jars/libraries/org/lwjgl/lwjgl/lwjgl_util/2.9.1/lwjgl_util-2.9.1.jar" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/debug" expected_position="0" />
       <src_folder value="file://$MODULE_DIR$/resources" expected_position="1" />
@@ -32,7 +34,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Client" exported="" />
-    <orderEntry type="jdk" jdkName="JavaSE-1.6" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="JavaSE-1.8" jdkType="JavaSDK" />
     <orderEntry type="module-library" exported="">
       <library name="launchwrapper-1.11.jar">
         <CLASSES>

@@ -238,6 +238,7 @@ public class ClassTransformerManager
 					else
 					{
 						LiteLoaderLogger.warning("Packet transformer class '%s' references class '%s' which is not allowed. Packet transformers must not contain references to other classes", transformerClassName, tempLoader.getInvalidClassName()); 
+						tempLoader.close();
 						iter.remove();
 					}
 				}

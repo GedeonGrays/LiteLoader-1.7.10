@@ -16,6 +16,7 @@ import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.Logger;
 import org.apache.logging.log4j.core.appender.FileAppender;
 import org.apache.logging.log4j.core.layout.PatternLayout;
+import org.apache.logging.log4j.core.layout.PatternLayout.Builder;
 
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.Launch;
@@ -381,8 +382,19 @@ class LiteLoaderBootstrap implements LoaderBootstrap, LoaderEnvironment, LoaderP
 		LiteLoaderLogger.info("Setting up logger...");
 		
 		Logger logger = LiteLoaderLogger.getLogger();
-		Layout<? extends Serializable> layout = PatternLayout.createLayout("[%d{HH:mm:ss}] [%t/%level]: %msg%n", logger.getContext().getConfiguration(), null, "UTF-8", "True");
-		FileAppender fileAppender = FileAppender.createAppender(this.logFile.getAbsolutePath(), "False", "False", "LiteLoader", "True", "True", "True", layout, null, "False", "", logger.getContext().getConfiguration());
+		
+		PatternLayout.Builder layoutBilder = PatternLayout.newBuilder();
+		Layout<? extends Serializable> layout = layoutBilder.withPattern("[%d{HH:mm:ss}] [%t/%level]: %msg%n").withConfiguration(logger.getContext().getConfiguration()).build();
+
+		FileAppender.Builder fileBuilder = FileAppender.newBuilder();
+		fileBuilder.withFileName(this.logFile.getAbsolutePath())
+				.withAppend(false)
+				.setName("LiteLoader")
+				.setIgnoreExceptions(true)
+				.setConfiguration(logger.getContext().getConfiguration())
+				.setLayout(layout);
+		
+		FileAppender fileAppender = fileBuilder.build();
 		fileAppender.start();
 		logger.addAppender(fileAppender);
 	}

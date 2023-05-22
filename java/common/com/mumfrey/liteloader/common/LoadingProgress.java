@@ -27,9 +27,14 @@ public abstract class LoadingProgress
 		if (LoadingProgress.instance != null) LoadingProgress.instance._incLiteLoaderProgress();
 	}
 	
-	public static void setMessage(String format, String... args)
+	public static void setMessage(String format, Object... args)
 	{
 		if (LoadingProgress.instance != null) LoadingProgress.instance._setMessage(String.format(format, args));
+	}
+	
+	public static void setMessage(String format, String... args)
+	{
+		if (LoadingProgress.instance != null) LoadingProgress.instance._setMessage(String.format(format, (Object) args));
 	}
 
 	public static void setMessage(String message)
@@ -37,9 +42,14 @@ public abstract class LoadingProgress
 		if (LoadingProgress.instance != null) LoadingProgress.instance._setMessage(message);
 	}
 	
-	public static void incLiteLoaderProgress(String format, String... args)
+	public static void incLiteLoaderProgress(String format, Object... args)
 	{
 		if (LoadingProgress.instance != null) LoadingProgress.instance._incLiteLoaderProgress(String.format(format, args));
+	}
+	
+	public static void incLiteLoaderProgress(String format, String... args)
+	{
+		if (LoadingProgress.instance != null) LoadingProgress.instance._incLiteLoaderProgress(String.format(format, (Object) args));
 	}
 
 	public static void incLiteLoaderProgress(String message)
